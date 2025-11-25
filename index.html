@@ -6,21 +6,21 @@
     <title>สรุปผลการเลือกตั้งคณะกรรมการสวัสดิการและคุ้มครองแรงงาน</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
-        
+       
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Kanit', sans-serif;
         }
-        
+       
         body {
             background-color: #f5f5f5;
             color: #333;
             padding: 20px;
             line-height: 1.6;
         }
-        
+       
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -29,27 +29,27 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        
+       
         header {
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 2px solid #e0e0e0;
         }
-        
+       
         h1 {
             color: #2c3e50;
             font-size: 28px;
             margin-bottom: 10px;
             font-weight: 600;
         }
-        
+       
         .subtitle {
             color: #7f8c8d;
             font-size: 18px;
             font-weight: 400;
         }
-        
+       
         .stats-cards {
             display: flex;
             justify-content: space-between;
@@ -59,7 +59,7 @@
             overflow-x: auto;
             padding: 10px 0;
         }
-        
+       
         .stat-card {
             flex: 1;
             min-width: 150px;
@@ -70,38 +70,24 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
-        .stat-card:nth-child(2) {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-        }
-        
-        .stat-card:nth-child(3) {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-        }
-        
-        .stat-card:nth-child(4) {
-            background: linear-gradient(135deg, #9b59b6, #8e44ad);
-        }
-        
-        .stat-card:nth-child(5) {
-            background: linear-gradient(135deg, #f39c12, #d35400);
-        }
-        
-        .stat-card:nth-child(6) {
-            background: linear-gradient(135deg, #34495e, #2c3e50);
-        }
-        
+       
+        .stat-card:nth-child(2) { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+        .stat-card:nth-child(3) { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .stat-card:nth-child(4) { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .stat-card:nth-child(5) { background: linear-gradient(135deg, #f39c12, #d35400); }
+        .stat-card:nth-child(6) { background: linear-gradient(135deg, #34495e, #2c3e50); }
+       
         .stat-value {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 5px;
         }
-        
+       
         .stat-label {
             font-size: 12px;
             opacity: 0.9;
         }
-        
+       
         .candidates-title {
             font-size: 22px;
             color: #2c3e50;
@@ -109,7 +95,7 @@
             padding-bottom: 10px;
             border-bottom: 1px solid #e0e0e0;
         }
-        
+       
         .data-table {
             width: 100%;
             border-collapse: collapse;
@@ -118,7 +104,7 @@
             border-radius: 8px;
             overflow: hidden;
         }
-        
+       
         .data-table th {
             background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
@@ -126,20 +112,20 @@
             text-align: left;
             font-weight: 500;
         }
-        
+       
         .data-table td {
             padding: 12px 15px;
             border-bottom: 1px solid #e0e0e0;
         }
-        
+       
         .data-table tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-        
+       
         .data-table tr:hover {
             background-color: #f1f8ff;
         }
-        
+       
         .rank-cell {
             text-align: center;
             font-weight: 600;
@@ -147,45 +133,43 @@
             color: #2c3e50;
             width: 80px;
         }
-        
+       
         .photo-cell {
             width: 120px;
             text-align: center;
         }
-        
+       
         .candidate-photo {
-            width: 90px;
-            height: 160px; /* 16:9 aspect ratio - 90x160px */
+            width: 120px;
+            height: 180px;
             object-fit: cover;
             border-radius: 8px;
             border: 2px solid #e0e0e0;
-            display: block;
-            margin: 0 auto;
         }
-        
+       
         .name-cell {
             font-weight: 500;
             color: #2c3e50;
         }
-        
+       
         .department-cell {
             color: #7f8c8d;
         }
-        
+       
         .votes-cell {
             text-align: center;
             font-weight: 600;
             color: #e74c3c;
             width: 100px;
         }
-        
+       
         .print-controls {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin: 30px 0;
         }
-        
+       
         .print-btn, .preview-btn {
             padding: 12px 30px;
             background-color: #3498db;
@@ -197,168 +181,116 @@
             transition: background-color 0.3s;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
+       
         .preview-btn {
             background-color: #2ecc71;
         }
-        
-        .print-btn:hover {
-            background-color: #2980b9;
+       
+        .print-btn:hover { background-color: #2980b9; }
+        .preview-btn:hover { background-color: #27ae60; }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+            font-size: 18px;
         }
-        
-        .preview-btn:hover {
-            background-color: #27ae60;
-        }
-        
-        .print-preview {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            overflow-y: auto;
-            padding: 20px;
-        }
-        
-        .preview-content {
-            background-color: white;
-            width: 794px; /* A4 width in pixels at 96dpi */
-            min-height: 1123px; /* A4 height in pixels at 96dpi */
-            margin: 0 auto;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-        
-        .close-preview {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .preview-actions {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        /* Styles for print */
+
+        /* CSS สำหรับการพิมพ์ */
         @media print {
             body {
-                background-color: white;
                 padding: 0;
-                margin: 0;
+                background-color: white;
                 font-size: 12px;
             }
             
             .container {
-                box-shadow: none;
-                padding: 0;
-                margin: 0;
-                width: 100%;
-                max-width: 100%;
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 5px !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
             }
             
             .print-controls {
-                display: none;
+                display: none !important;
             }
             
-            .data-table {
-                box-shadow: none;
-                font-size: 11px;
-            }
-            
-            .data-table th, 
-            .data-table td {
-                padding: 8px 10px;
-            }
-            
-            .candidate-photo {
-                width: 70px;
-                height: 125px;
-            }
-            
+            /* การ์ดสถิติเรียงแนวนอนทั้งหมด 6 การ์ด */
             .stats-cards {
-                gap: 5px;
-                margin-bottom: 20px;
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                gap: 5px !important;
+                margin-bottom: 15px !important;
+                padding: 0 !important;
             }
             
             .stat-card {
-                padding: 10px 5px;
+                flex: 1 !important;
+                min-width: auto !important;
+                padding: 8px 5px !important;
+                margin: 0 !important;
+                page-break-inside: avoid;
             }
             
             .stat-value {
-                font-size: 16px;
+                font-size: 14px !important;
+                margin-bottom: 3px !important;
             }
             
             .stat-label {
-                font-size: 10px;
+                font-size: 10px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .data-table {
+                font-size: 11px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .data-table th,
+            .data-table td {
+                padding: 8px 10px !important;
+            }
+            
+            .candidate-photo {
+                width: 70px !important;
+                height: 100px !important;
+            }
+            
+            .photo-cell {
+                width: 80px !important;
+            }
+            
+            .footer {
+                margin-top: 15px !important;
+                font-size: 10px !important;
             }
             
             h1 {
-                font-size: 22px;
+                font-size: 20px !important;
+                margin-bottom: 8px !important;
             }
             
             .subtitle {
-                font-size: 16px;
+                font-size: 14px !important;
             }
             
             .candidates-title {
-                font-size: 18px;
-            }
-            
-            header {
-                margin-bottom: 20px;
-                padding-bottom: 15px;
+                font-size: 16px !important;
+                margin: 15px 0 10px !important;
             }
         }
-        
-        @media (max-width: 768px) {
+
+        /* สำหรับหน้าจอขนาดเล็ก */
+        @media screen and (max-width: 768px) {
             .stats-cards {
                 flex-wrap: wrap;
             }
             
             .stat-card {
-                flex: 0 0 calc(50% - 10px);
-                margin-bottom: 10px;
-            }
-            
-            .data-table {
-                font-size: 14px;
-            }
-            
-            .data-table th, 
-            .data-table td {
-                padding: 8px 10px;
-            }
-            
-            .candidate-photo {
-                width: 60px;
-                height: 107px; /* 16:9 aspect ratio - 60x107px */
-            }
-            
-            .photo-cell {
-                width: 80px;
-            }
-            
-            .preview-content {
-                width: 100%;
-                padding: 20px;
+                min-width: calc(50% - 10px);
             }
         }
     </style>
@@ -366,25 +298,25 @@
 <body>
     <div class="container">
         <header>
-            <h1>รายงานสรุปผลการเลือกตั้ง</h1>
-            <p class="subtitle">คณะกรรมการสวัสดิการและคุ้มครองแรงงาน</p>
+            <h1>รายงานการจัดอันดับการลงคะแนนเลือกตั้ง</h1>
+            <p class="subtitle">คณะกรรมการสวัสดิการในสถานประกอบการ(โรงงาน2) ประจำปี 2568</p>
         </header>
-        
-        <div class="stats-cards">
+       
+        <div class="stats-cards" id="statsCards">
             <div class="stat-card">
-                <div class="stat-value">1,000</div>
+                <div class="stat-value" id="totalVoters">-</div>
                 <div class="stat-label">ผู้มีสิทธิ์ลงคะแนนทั้งหมด</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">900</div>
-                <div class="stat-label">ผู้มาใช้สิทธิ์ (90%)</div>
+                <div class="stat-value" id="votedCount">-</div>
+                <div class="stat-label">ผู้มาใช้สิทธิ์ (86.43%)</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">100</div>
-                <div class="stat-label">ไม่มาใช้สิทธิ์ (10%)</div>
+                <div class="stat-value" id="notVotedCount">-</div>
+                <div class="stat-label">ไม่มาใช้สิทธิ์ (13.59%)</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">890</div>
+                <div class="stat-value" id="validVotes11">847</div>
                 <div class="stat-label">คะแนนในหีบ</div>
             </div>
             <div class="stat-card">
@@ -392,14 +324,16 @@
                 <div class="stat-label">บัตรเสีย (0%)</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">10</div>
-                <div class="stat-label">ผู้ไม่ประสงค์ลงคะแนน (1%)</div>
+                <div class="stat-value" id="noVoteCount11">5</div>
+                <div class="stat-label">ผู้ไม่ประสงค์ลงคะแนน (0.51%)</div>
             </div>
         </div>
-        
+       
         <h2 class="candidates-title">ผลคะแนนผู้สมัคร (เรียงตามอันดับคะแนน)</h2>
-        
-        <table class="data-table">
+       
+        <div id="loading" class="loading">กำลังโหลดผลการเลือกตั้ง...</div>
+       
+        <table class="data-table" id="resultsTable" style="display: none;">
             <thead>
                 <tr>
                     <th class="rank-cell">อันดับ</th>
@@ -409,152 +343,148 @@
                     <th class="votes-cell">คะแนน</th>
                 </tr>
             </thead>
-            <tbody id="candidatesTable">
-                <!-- Candidate rows will be generated by JavaScript -->
-            </tbody>
+            <tbody id="candidatesTable"></tbody>
         </table>
-        
+           <center>
+           <div class="footer">
+                <h6 class="text-lg font-semibold" style="font-size: 12px;color:#64748b;">
+                    <i class="far fa-copyright"></i> 2025 จัดทำโดย นายภาคภูมิ เรือนมูล แผนก HR<br> ร่วมกับ แผนกไอที และ คณะสวัสดิการโรงงานCm2
+                </h6>
+            </div>
+            </center>
         <div class="print-controls">
-            <button class="preview-btn" onclick="showPrintPreview()">แสดงตัวอย่างก่อนพิมพ์</button>
-            <button class="print-btn" onclick="window.print()">พิมพ์รายงาน</button>
+            <button class="preview-btn" onclick="window.print()">พิมพ์รายงาน</button>
         </div>
     </div>
 
-    <div class="print-preview" id="printPreview">
-        <div class="preview-content">
-            <button class="close-preview" onclick="closePrintPreview()">×</button>
-            
-            <header>
-                <h1>รายงานสรุปผลการเลือกตั้ง</h1>
-                <p class="subtitle">คณะกรรมการสวัสดิการและคุ้มครองแรงงาน</p>
-            </header>
-            
-            <div class="stats-cards">
-                <div class="stat-card">
-                    <div class="stat-value">1,000</div>
-                    <div class="stat-label">ผู้มีสิทธิ์ลงคะแนนทั้งหมด</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">900</div>
-                    <div class="stat-label">ผู้มาใช้สิทธิ์ (90%)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">100</div>
-                    <div class="stat-label">ไม่มาใช้สิทธิ์ (10%)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">890</div>
-                    <div class="stat-label">คะแนนในหีบ</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">บัตรเสีย (0%)</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">10</div>
-                    <div class="stat-label">ผู้ไม่ประสงค์ลงคะแนน (1%)</div>
-                </div>
-            </div>
-            
-            <h2 class="candidates-title">ผลคะแนนผู้สมัคร (เรียงตามอันดับคะแนน)</h2>
-            
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th class="rank-cell">อันดับ</th>
-                        <th class="photo-cell">รูปผู้สมัคร</th>
-                        <th class="name-cell">ชื่อ-สกุล</th>
-                        <th class="department-cell">แผนก</th>
-                        <th class="votes-cell">คะแนน</th>
-                    </tr>
-                </thead>
-                <tbody id="previewCandidatesTable">
-                    <!-- Candidate rows will be generated by JavaScript -->
-                </tbody>
-            </table>
-            
-            <div class="preview-actions">
-                <button class="print-btn" onclick="window.print()">พิมพ์รายงาน</button>
-                <button class="close-preview" onclick="closePrintPreview()">ปิดตัวอย่าง</button>
-            </div>
-        </div>
-    </div>
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+        import {
+            getFirestore,
+            collection,
+            getDocs,
+            onSnapshot
+        } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 
-    <script>
-        // ข้อมูลผู้สมัครตัวอย่าง
-        const candidates = [
-            { name: "สมชาย ใจดี", department: "แผนกผลิต", votes: 125, image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" },
-            { name: "สุนิสา รักงาน", department: "แผนกบุคคล", votes: 118, image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" },
-            { name: "ประยุทธ์ ตั้งใจ", department: "แผนกบัญชี", votes: 112, image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" },
-            { name: "กนกวรรณ สุขใจ", department: "แผนกขาย", votes: 98, image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" },
-            { name: "ธนวัฒน์ เก่งงาน", department: "แผนกจัดซื้อ", votes: 87, image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" },
-            { name: "รัตนา มีน้ำใจ", department: "แผนกผลิต", votes: 85, image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" },
-            { name: "วีระศักดิ์ ขยันขัน", department: "แผนกซ่อมบำรุง", votes: 78, image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" },
-            { name: "อรุณี สุขสันต์", department: "แผนกบุคคล", votes: 76, image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "ชัยวัฒน์ ใจกว้าง", department: "แผนกผลิต", votes: 72, image: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "พิมพา ตั้งมั่น", department: "แผนกบัญชี", votes: 68, image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "อนุชา มีวินัย", department: "แผนกขาย", votes: 65, image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "สุภาวดี รักเพื่อน", department: "แผนกจัดซื้อ", votes: 62, image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "ธีรพงศ์ ใจเย็น", department: "แผนกผลิต", votes: 58, image: "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "นันทนา สุขสำราญ", department: "แผนกบุคคล", votes: 55, image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "อภิชาติ มีความสุข", department: "แผนกซ่อมบำรุง", votes: 52, image: "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "วิไลลักษณ์ ใจดี", department: "แผนกผลิต", votes: 48, image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "กฤษณะ มีน้ำใจ", department: "แผนกบัญชี", votes: 45, image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "พิมพรรณ เก่งงาน", department: "แผนกขาย", votes: 42, image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "ศุภชัย ตั้งใจ", department: "แผนกจัดซื้อ", votes: 38, image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "รัชนี มีวินัย", department: "แผนกผลิต", votes: 35, image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "ธีระ ใจเย็น", department: "แผนกบุคคล", votes: 32, image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "สุรีย์ มีน้ำใจ", department: "แผนกซ่อมบำรุง", votes: 28, image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "ณัฐพล เก่งงาน", department: "แผนกผลิต", votes: 25, image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" },
-            { name: "กัลยาณี ใจดี", department: "แผนกบัญชี", votes: 22, image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" }
-        ];
+        const firebaseConfig = {
+            apiKey: "AIzaSyCWRIFj6NHeHkXL1bIEbb93lUzaZf8NNmI",
+            authDomain: "fir-crud-b7960.firebaseapp.com",
+            projectId: "fir-crud-b7960",
+            storageBucket: "fir-crud-b7960.firebasestorage.app",
+            messagingSenderId: "32150734884",
+            appId: "1:32150734884:web:58b01e9f4ba0d9b9a170b1"
+        };
 
-        // เรียงลำดับผู้สมัครตามคะแนน (จากมากไปน้อย)
-        candidates.sort((a, b) => b.votes - a.votes);
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
 
-        // สร้างแถวตารางผู้สมัคร
-        const tableBody = document.getElementById('candidatesTable');
-        const previewTableBody = document.getElementById('previewCandidatesTable');
-        
-        function populateTable(tableElement) {
-            tableElement.innerHTML = '';
-            candidates.forEach((candidate, index) => {
-                const row = document.createElement('tr');
-                
-                row.innerHTML = `
-                    <td class="rank-cell">${index + 1}</td>
-                    <td class="photo-cell">
-                        <img src="${candidate.image}" alt="${candidate.name}" class="candidate-photo">
-                    </td>
-                    <td class="name-cell">${candidate.name}</td>
-                    <td class="department-cell">${candidate.department}</td>
-                    <td class="votes-cell">${candidate.votes}</td>
-                `;
-                
-                tableElement.appendChild(row);
-            });
-        }
-        
-        // เรียกใช้ฟังก์ชันเพื่อสร้างตารางทั้งสอง
-        populateTable(tableBody);
-        populateTable(previewTableBody);
+        let totalVoters = 0;
+        let candidates = [];
 
-        // ฟังก์ชันแสดงตัวอย่างก่อนพิมพ์
-        function showPrintPreview() {
-            document.getElementById('printPreview').style.display = 'block';
+        // ดึงเบอร์จาก string เช่น "เบอร์ 5" → 5
+        function getCandidateNumber(str) {
+            if (!str) return 999;
+            const match = str.toString().match(/(\d+)/);
+            return match ? parseInt(match[1]) : 999;
         }
 
-        // ฟังก์ชันปิดตัวอย่างก่อนพิมพ์
-        function closePrintPreview() {
-            document.getElementById('printPreview').style.display = 'none';
-        }
+        async function init() {
+            try {
+                await signInAnonymously(auth);
 
-        // ปิดตัวอย่างเมื่อกด ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closePrintPreview();
+                // ดึงจำนวนผู้มีสิทธิ์ (จาก collection employees)
+                const empSnap = await getDocs(collection(db, "employees"));
+                totalVoters = empSnap.size;
+                document.getElementById("totalVoters").textContent = totalVoters.toLocaleString();
+
+                // ดึงข้อมูลผู้สมัคร
+                const candSnap = await getDocs(collection(db, "candidates"));
+                candidates = [];
+                candSnap.forEach(doc => {
+                    const data = doc.data();
+                    candidates.push({
+                        id: doc.id,
+                        name: data.name || "ไม่ระบุชื่อ",
+                        party: data.party || "ไม่ระบุแผนก",
+                        number: data.number || "",
+                        image: data.image || "https://via.placeholder.com/90x160/4361ee/ffffff?text=No+Image",
+                        votes: 0
+                    });
+                });
+
+                // ถ้ายังไม่มี "ไม่ประสงค์ลงคะแนน" ให้เพิ่ม
+                if (!candidates.some(c => c.id === "novote")) {
+                    candidates.push({
+                        id: "novote",
+                        name: "ไม่ประสงค์ลงคะแนน",
+                        party: "ไม่ประสงค์ลงคะแนน",
+                        number: "ไม่ประสงค์",
+                        image: "https://cmfrozen-387fd.web.app/vote/images/voteno.jpeg",
+                        votes: 0
+                    });
+                }
+
+                // Real-time listener สำหรับผลโหวต
+                onSnapshot(collection(db, "electionResponses"), (snapshot) => {
+                    const voted = snapshot.size;
+                    // const noVoteCount = snapshot.docs.filter(doc => doc.data().candidateId === "novote").length;
+                    // const validVotes = voted - noVoteCount;
+
+                    // อัปเดตสถิติ
+                    document.getElementById("totalVoters").textContent = totalVoters.toLocaleString();
+                    document.getElementById("votedCount").textContent = voted.toLocaleString();
+                    document.getElementById("notVotedCount").textContent = (totalVoters - voted).toLocaleString();
+                    // document.getElementById("validVotes").textContent = validVotes.toLocaleString();
+                    // document.getElementById("noVoteCount").textContent = noVoteCount.toLocaleString();
+
+                    // รีเซ็ตคะแนน
+                    candidates.forEach(c => c.votes = 0);
+                    snapshot.forEach(doc => {
+                        const cid = doc.data().candidateId;
+                        const cand = candidates.find(c => c.id === cid);
+                        if (cand) cand.votes++;
+                    });
+
+                    // เรียงลำดับ (ไม่รวม novote)
+                    const ranked = candidates
+                        .filter(c => c.id !== "novote")
+                        .sort((a, b) => {
+                            if (b.votes !== a.votes) return b.votes - a.votes;
+                            return getCandidateNumber(a.number) - getCandidateNumber(b.number);
+                        });
+
+                    // แสดงผลในตาราง
+                    const tbody = document.getElementById("candidatesTable");
+                    tbody.innerHTML = "";
+                    ranked.forEach((cand, idx) => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td class="rank-cell">${idx + 1}</td>
+                            <td class="photo-cell">
+                                <img src="${cand.image}" alt="${cand.name}" class="candidate-photo" onerror="this.src='https://via.placeholder.com/90x160/4361ee/ffffff?text=No+Image'">
+                            </td>
+                            <td class="name-cell">${cand.name}</td>
+                            <td class="department-cell">${cand.party}</td>
+                            <td class="votes-cell">${cand.votes.toLocaleString()}</td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+
+                    // ซ่อน loading
+                    document.getElementById("loading").style.display = "none";
+                    document.getElementById("resultsTable").style.display = "table";
+                });
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById("loading").innerHTML = "เกิดข้อผิดพลาดในการโหลดข้อมูล";
             }
-        });
+        }
+
+        init();
     </script>
 </body>
 </html>
